@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		271630C623512BFE00DCD429 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271630C523512BFE00DCD429 /* AppDelegate.swift */; };
-		271630C823512BFE00DCD429 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271630C723512BFE00DCD429 /* ViewController.swift */; };
 		271630CB23512BFE00DCD429 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271630C923512BFE00DCD429 /* Main.storyboard */; };
 		271630CD23512BFF00DCD429 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271630CC23512BFF00DCD429 /* Assets.xcassets */; };
 		271630D023512BFF00DCD429 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271630CE23512BFF00DCD429 /* LaunchScreen.storyboard */; };
+		271630D823512F2D00DCD429 /* DetailVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271630D723512F2D00DCD429 /* DetailVCViewController.swift */; };
+		271630DA235133DA00DCD429 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271630D9235133DA00DCD429 /* ListViewController.swift */; };
+		271630DC235135DF00DCD429 /* PageVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271630DB235135DF00DCD429 /* PageVCViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		271630C223512BFE00DCD429 /* WeatherGift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherGift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		271630C523512BFE00DCD429 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		271630C723512BFE00DCD429 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		271630CA23512BFE00DCD429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		271630CC23512BFF00DCD429 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		271630CF23512BFF00DCD429 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		271630D123512BFF00DCD429 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		271630D723512F2D00DCD429 /* DetailVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVCViewController.swift; sourceTree = "<group>"; };
+		271630D9235133DA00DCD429 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		271630DB235135DF00DCD429 /* PageVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVCViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				271630C523512BFE00DCD429 /* AppDelegate.swift */,
-				271630C723512BFE00DCD429 /* ViewController.swift */,
+				271630DB235135DF00DCD429 /* PageVCViewController.swift */,
+				271630D723512F2D00DCD429 /* DetailVCViewController.swift */,
+				271630D9235133DA00DCD429 /* ListViewController.swift */,
 				271630C923512BFE00DCD429 /* Main.storyboard */,
 				271630CC23512BFF00DCD429 /* Assets.xcassets */,
 				271630CE23512BFF00DCD429 /* LaunchScreen.storyboard */,
@@ -135,8 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				271630C823512BFE00DCD429 /* ViewController.swift in Sources */,
 				271630C623512BFE00DCD429 /* AppDelegate.swift in Sources */,
+				271630D823512F2D00DCD429 /* DetailVCViewController.swift in Sources */,
+				271630DC235135DF00DCD429 /* PageVCViewController.swift in Sources */,
+				271630DA235133DA00DCD429 /* ListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
