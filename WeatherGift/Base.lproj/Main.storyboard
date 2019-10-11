@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--DetailVC View Controller-->
+        <!--DetailVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="DetailVCViewController" customModule="WeatherGift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" id="BYZ-38-t0r" customClass="DetailVC" customModule="WeatherGift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,23 +68,30 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="currentImage" destination="s8P-wH-Q2K" id="2PR-sY-CE0"/>
+                        <outlet property="dateLabel" destination="5sJ-JW-6Qu" id="i7N-1o-4Wq"/>
+                        <outlet property="locationLabel" destination="Y43-pg-OHz" id="Pth-i0-sOK"/>
+                        <outlet property="summaryLabel" destination="lnp-gB-n58" id="SIu-cG-DNB"/>
+                        <outlet property="temperatureLabel" destination="Cx6-p0-0il" id="PJP-el-SVC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
         </scene>
-        <!--PageVC View Controller-->
+        <!--PageVC-->
         <scene sceneID="dai-Vo-ng5">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="no7-OD-7yu" customClass="PageVCViewController" customModule="WeatherGift" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="no7-OD-7yu" customClass="PageVC" customModule="WeatherGift" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zZi-rN-pdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="103" y="-568"/>
         </scene>
-        <!--List View Controller-->
+        <!--ListVC-->
         <scene sceneID="4No-9l-gGS">
             <objects>
-                <viewController id="QTI-gZ-Ycf" customClass="ListViewController" customModule="WeatherGift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QTI-gZ-Ycf" customClass="ListVC" customModule="WeatherGift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="odq-6I-Fok">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

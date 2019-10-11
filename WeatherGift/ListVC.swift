@@ -1,5 +1,5 @@
 //
-//  DetailVCViewController.swift
+//  ListViewController.swift
 //  WeatherGift
 //
 //  Created by Kyle Gil Tan on 10/11/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailVCViewController: UIViewController {
+class ListVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,5 +16,6 @@ class DetailVCViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+
 
 }
