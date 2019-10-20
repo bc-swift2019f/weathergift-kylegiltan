@@ -106,7 +106,7 @@ extension ListVC: UITableViewDelegate, UITableViewDataSource{
 //        }
         return(proposedDestinationIndexPath.row == 0 ? sourceIndexPath : proposedDestinationIndexPath)
     }
-    func updateTable(place: GMSPlace){
+    func updateTable(place: GMSPlace){ //
         let newIndexPath = IndexPath(row: locationsArray.count, section: 0)
         var newWeatherLocation = WeatherLocation()
         newWeatherLocation.name = place.name!
