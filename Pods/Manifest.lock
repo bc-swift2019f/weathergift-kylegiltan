@@ -6,7 +6,7 @@ PODS:
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
+  - Alamofire (~> 4.9)
   - GooglePlaces
   - SwiftyJSON
 
@@ -23,6 +23,6 @@ SPEC CHECKSUMS:
   GooglePlaces: be6f19fe8aa6ff0b5bcccfa1b8805cc977ea1450
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 1d0179c36724685de3c6afb1b9e48e7c22c70187
+PODFILE CHECKSUM: 00779998cdb0f6775ae7a5de683015b9093fe807
 
 COCOAPODS: 1.8.3

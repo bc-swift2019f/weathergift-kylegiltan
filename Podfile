@@ -8,6 +8,6 @@ target 'WeatherGift' do
 
   # Pods for WeatherGift
 pod 'GooglePlaces'
-pod 'Alamofire', '~> 4.0'
+pod 'Alamofire', '~> 4.9'
 pod 'SwiftyJSON'
 end
