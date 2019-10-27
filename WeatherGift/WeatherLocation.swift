@@ -12,6 +12,13 @@ import SwiftyJSON
 
 class WeatherLocation{
     
+    struct HourlyForcast{
+        var hourlyTime: Double
+        var hourlyTemperature: Double
+        var hourlyPrecipProb: Double
+        var hourlyIcon: String
+    }
+    
     struct DailyForcast{
         var dailyMaxTemp: Double
         var dailyMinTemp: Double
@@ -28,6 +35,7 @@ class WeatherLocation{
     var currentTime = 0.0
     var timeZone = ""
     var dailyForecastArray = [DailyForcast]()
+    var hourlyForecastArray = [HourlyForcast]()
     
     func getWeather(completed: @escaping () -> ()){
         let weatherURL = urlBase + urlAPIKey + coordinates
@@ -70,10 +78,12 @@ class WeatherLocation{
                 else{
                     print("No time")
                 }
+                
                 let dailyDataArray = json["daily"]["data"]
                 //print("***** Daily data array is \(dailyDataArray)")
                 self.dailyForecastArray = []
-                for day in 1...dailyDataArray.count-1{
+                let days = min(7, dailyDataArray.count-1)
+                for day in 1...days{
                     let maxTemp = json["daily"]["data"][day]["temperatureHigh"].doubleValue
                     let minTemp = json["daily"]["data"][day]["temperatureLow"].doubleValue
                     let dataValue = json["daily"]["data"][day]["time"].doubleValue
@@ -82,6 +92,20 @@ class WeatherLocation{
                     let newDailyForcast = DailyForcast(dailyMaxTemp: maxTemp, dailyMinTemp: minTemp, dailyDate: dataValue, dailySummary: dailySummary, dailyIcon: icon)
                     self.dailyForecastArray.append(newDailyForcast)
                 }
+                
+                let hourlyDataArray = json["hourly"]["data"]
+                self.hourlyForecastArray = []
+                let hours = min (24, hourlyDataArray.count-1)
+                for hour in 1...hours{
+                    let hourlyTime = json["hourly"]["data"][hour]["time"].doubleValue
+                    let hourlyTemperature = json["hourly"]["data"][hour]["temperature"].doubleValue
+                    let hourlyPrecipProb = json["hourly"]["data"][hour]["precipProbability"].doubleValue
+                    let hourlyIcon = json["hourly"]["data"][hour]["icon"].stringValue
+                    let newHourlyForecast = HourlyForcast(hourlyTime: hourlyTime, hourlyTemperature: hourlyTemperature, hourlyPrecipProb: hourlyPrecipProb, hourlyIcon: hourlyIcon)
+                    self.hourlyForecastArray.append(newHourlyForecast)
+                }
+                
+                
             case .failure(let error):
                 print(error)
             }

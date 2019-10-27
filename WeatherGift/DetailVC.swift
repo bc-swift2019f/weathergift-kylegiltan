@@ -11,7 +11,7 @@ import CoreLocation
 
 private let dateFormatter: DateFormatter = {
     var dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "EEEE, MM dd, y"
+    dateFormatter.dateFormat = "EEEE, MMM dd, y"
     return dateFormatter
 }()
 
@@ -60,6 +60,7 @@ class DetailVC: UIViewController {
         summaryLabel.text = location.currentSummary
         currentImage.image = UIImage(named: location.currentIcon)
         tableView.reloadData()
+        collectionView.reloadData()
     }
     
 //    func formatTimeforTimeZone(unixDate: TimeInterval,timeZone: String) -> String {
@@ -135,6 +136,7 @@ extension DetailVC: UITableViewDataSource, UITableViewDelegate{
         let dailyForecast = locationsArray[currentPage].dailyForecastArray[indexPath.row]
         let timeZone = locationsArray[currentPage].timeZone
         cell.update(with: dailyForecast, timeZone: timeZone)
+        //see line 62 for update
         return cell
     }
     
@@ -145,12 +147,16 @@ extension DetailVC: UITableViewDataSource, UITableViewDelegate{
 
 extension DetailVC: UICollectionViewDelegate, UICollectionViewDataSource{
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 24
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { 
+        return locationsArray[currentPage].hourlyForecastArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let hourlyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourlyCell", for: indexPath)
+        let hourlyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "HourlyCell", for: indexPath) as! HourlyWeatherCell
+        let hourlyForecast = locationsArray[currentPage].hourlyForecastArray[indexPath.row]
+        let timeZone = locationsArray[currentPage].timeZone
+        hourlyCell.update(with: hourlyForecast, timeZone: timeZone)
+        //see line 63 for update
         return hourlyCell
     }
 }
